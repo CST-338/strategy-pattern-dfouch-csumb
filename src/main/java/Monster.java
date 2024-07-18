@@ -120,9 +120,10 @@ public abstract class Monster {
     }
 
     /**
-     * Overrides the toString() function to return a concatenated & formatted string of the Monster's
+     * Overrides the toString() function to return a concatenated & formatted string
+     * of the Monster's current health points compared to their max health points.
      *
-     * @return a concatenated & formatted string of the Monster's
+     * @return a concatenated & formatted string of the Monster's current health points compared to their max health points.
      */
     @Override
     public String toString() {
