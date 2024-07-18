@@ -20,6 +20,14 @@ public abstract class Monster {
     private int maxHP; // the max amount of health points the Monster can have
     private HashMap<String, Integer> items; // the inventory of items of the Monster
 
+    /**
+     * Parameterized constructor to construct the Monster object with the provided maxHP, hp, & inventory of items.
+     *
+     * @param maxHP the max amount of health points the Monster can have, as an int
+     * @param xp the current amount of experience points the Monster has, as an int
+     * @param items the inventory of items the Monster has, as a HashMap
+     *
+     */
     public Monster(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
         this.maxHP = maxHP;
         hp = this.maxHP;
@@ -118,6 +126,6 @@ public abstract class Monster {
      */
     @Override
     public String toString() {
-        return "";
+        return "hp=" + hp + "/" + maxHP;
     }
 }
