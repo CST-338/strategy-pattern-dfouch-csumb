@@ -16,7 +16,7 @@ import java.util.Objects;
 public abstract class Monster {
 
     private int hp; // the current amount of health points of the Monster
-    private int xp; // the current amount of experience points of the Monster
+    private int xp = 10; // the current amount of experience points of the Monster
     private int maxHP; // the max amount of health points the Monster can have
     private HashMap<String, Integer> items; // the inventory of items of the Monster
 
