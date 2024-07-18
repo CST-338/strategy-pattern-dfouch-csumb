@@ -17,9 +17,9 @@ public class Imp extends Monster {
      * Constructs the Imp object by passing the provided max health points, current experience points,
      * and inventory of items to the parent class's constructor,
      *
-     * @param maxHP the max amount of health points the Monster can have, as an int
-     * @param xp the current amount of experience points the Monster has, as an int
-     * @param items the inventory of items the Monster has, as a HashMap
+     * @param maxHP the max amount of health points the Imp can have, as an int
+     * @param xp the current amount of experience points the Imp has, as an int
+     * @param items the inventory of items the Imp has, as a HashMap
      *
      */
     public Imp(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
