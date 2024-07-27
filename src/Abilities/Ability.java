@@ -1,3 +1,5 @@
+package Abilities;
+
 /**
  * This is a plain old java project (POJO) that represents an interface for various attack ability classes,
  * which is used for a turn-based text game of a

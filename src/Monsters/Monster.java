@@ -1,3 +1,5 @@
+package Monsters;
+
 import java.util.HashMap;
 import java.util.Objects;
 

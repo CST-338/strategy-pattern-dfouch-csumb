@@ -1,3 +1,7 @@
+package Abilities;
+
+import Monsters.Monster;
+
 /**
  * This is a plain old java project (POJO) that represents a ranged attack ability based on an attack ability interface.
  * which is used for a turn-based text game of a
