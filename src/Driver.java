@@ -1,6 +1,4 @@
-import Monsters.Imp;
-import Monsters.Kobold;
-import Monsters.Monster;
+import Monsters.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;

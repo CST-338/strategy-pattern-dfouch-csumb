@@ -1,5 +1,7 @@
 package Monsters;
 
+import Abilities.Attack;
+
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -17,16 +19,20 @@ import java.util.Objects;
  */
 public abstract class Monster {
 
-    private int hp; // the current amount of health points of the Monster
-    private int xp = 10; // the current amount of experience points of the Monster
-    private int maxHP; // the max amount of health points the Monster can have
+    private Integer hp; // the current amount of health points of the Monster
+    private Integer xp = 10; // the current amount of experience points of the Monster
+    private Integer maxHP; // the max amount of health points the Monster can have
     private HashMap<String, Integer> items; // the inventory of items of the Monster
+    Integer str = 10; // the strength stat of the Monster
+    Integer def = 10; // the defense stat of the Monster
+    Integer agi = 10; // the agility stat of the Monster
+    Attack attack; // the attack object of the Monster
 
     /**
      * Parameterized constructor to construct the Monster object with the provided maxHP, hp, & inventory of items.
      *
-     * @param maxHP the max amount of health points the Monster can have, as an int
-     * @param xp the current amount of experience points the Monster has, as an int
+     * @param maxHP the max amount of health points the Monster can have, as an Integer
+     * @param xp the current amount of experience points the Monster has, as an Integer
      * @param items the inventory of items the Monster has, as a HashMap
      *
      */
@@ -40,36 +46,36 @@ public abstract class Monster {
     /**
      * Returns the experience points (XP) of the Monster.
      *
-     * @return the experience points (XP) of the Monster, as an int.
+     * @return the experience points (XP) of the Monster, as an Integer.
      */
-    public int getXp() {
+    public Integer getXp() {
         return xp;
     }
 
     /**
      * Returns the maximum possible health points (HP) of the Monster.
      *
-     * @return the maximum possible health points (HP) of the Monster, as an int.
+     * @return the maximum possible health points (HP) of the Monster, as an Integer.
      */
-    public int getMaxHP() {
+    public Integer getMaxHP() {
         return maxHP;
     }
 
     /**
      * Returns the health points (HP) of the Monster.
      *
-     * @return the health points (HP) of the Monster, as an int.
+     * @return the health points (HP) of the Monster, as an Integer.
      */
-    public int getHp() {
+    public Integer getHp() {
         return hp;
     }
 
     /**
      * Sets the health points (HP) value of the Monster.
      *
-     * @param hp the ID number for the Monster, as an int.
+     * @param hp the ID number for the Monster, as an Integer.
      */
-    public void setHp(int hp) {
+    public void setHp(Integer hp) {
         this.hp = hp;
     }
 
@@ -92,6 +98,33 @@ public abstract class Monster {
     }
 
     /**
+     * Returns the strength stat of the Monster.
+     *
+     * @return the strength stat of the Monster, as an Integer.
+     */
+    public Integer getStr() {
+        return str;
+    }
+
+    /**
+     * Returns the defense stat of the Monster.
+     *
+     * @return the defense stat of the Monster, as an Integer.
+     */
+    public Integer getDef() {
+        return def;
+    }
+
+    /**
+     * Returns the agility stat of the Monster.
+     *
+     * @return the agility stat of the Monster, as an Integer.
+     */
+    public Integer getAgi() {
+        return agi;
+    }
+
+    /**
      * Compares the equality of two Monster objects based on the object's contents/fields/attributes.
      * (Determines if object's contents are equal).
      *
@@ -103,7 +136,7 @@ public abstract class Monster {
         if (o == null || getClass() != o.getClass()) return false;
 
         Monster monster = (Monster) o;
-        return getHp() == monster.getHp() && getXp() == monster.getXp() && getMaxHP() == monster.getMaxHP() && Objects.equals(getItems(), monster.getItems());
+        return Objects.equals(getHp(), monster.getHp()) && Objects.equals(getXp(), monster.getXp()) && Objects.equals(getMaxHP(), monster.getMaxHP()) && Objects.equals(getItems(), monster.getItems()) && Objects.equals(getStr(), monster.getStr()) && Objects.equals(getDef(), monster.getDef()) && Objects.equals(getAgi(), monster.getAgi()) && Objects.equals(attack, monster.attack);
     }
 
     /**
@@ -114,10 +147,14 @@ public abstract class Monster {
      */
     @Override
     public int hashCode() {
-        int result = getHp();
-        result = 31 * result + getXp();
-        result = 31 * result + getMaxHP();
+        int result = Objects.hashCode(getHp());
+        result = 31 * result + Objects.hashCode(getXp());
+        result = 31 * result + Objects.hashCode(getMaxHP());
         result = 31 * result + Objects.hashCode(getItems());
+        result = 31 * result + Objects.hashCode(getStr());
+        result = 31 * result + Objects.hashCode(getDef());
+        result = 31 * result + Objects.hashCode(getAgi());
+        result = 31 * result + Objects.hashCode(attack);
         return result;
     }
 
