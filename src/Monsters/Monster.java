@@ -61,13 +61,28 @@ public abstract class Monster {
     }
 
     /**
-     * Calculates whether the target took damage or not.
+     * Calculates whether the Monster took damage or not.
      *
-     * @return a boolean of true if the target took damage, otherwise false.
+     * @return a boolean of true if the Monster took damage, otherwise false.
      */
-    public boolean takeDamage() {
+    public boolean takeDamage(Integer damage) {
 
-        return false;
+        // determine if the damage is affecting to the Monster
+        if (damage > 0) {
+            hp = hp - damage; // subtract the damage points from the Monster's health points
+            System.out.println("The creature was hit for " + damage + " damage");
+        }
+
+        if (hp <= 0) { // determine if the Monster died
+            System.out.println("Oh no! the creature has perished");
+        }
+
+        System.out.println(toString()); // display the Monster's toString()
+
+        if (hp > 0) { // return true if Monster is still alive
+            return true;
+        }
+        return false; // otherwise, false
     }
 
     /**
