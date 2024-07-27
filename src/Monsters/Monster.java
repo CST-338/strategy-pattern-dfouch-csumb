@@ -61,6 +61,26 @@ public abstract class Monster {
     }
 
     /**
+     * Calculates whether the target took damage or not.
+     *
+     * @return a boolean of true if the target took damage, otherwise false.
+     */
+    public boolean takeDamage() {
+
+        return false;
+    }
+
+    /**
+     * Initiates an attack on another Monster.
+     *
+     * @return the stats of the targets Monster?
+     */
+    public Integer attackTarget(Monster target) {
+
+        return 0 ;
+    }
+
+    /**
      * Returns the experience points (XP) of the Monster.
      *
      * @return the experience points (XP) of the Monster, as an Integer.
