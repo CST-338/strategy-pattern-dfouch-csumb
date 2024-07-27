@@ -4,6 +4,7 @@ import Abilities.Attack;
 
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.Random;
 
 
 /**
@@ -41,6 +42,22 @@ public abstract class Monster {
         hp = this.maxHP;
         this.xp = xp;
         this.items = items;
+    }
+
+    /**
+     * Returns a random number between the provided min and max numbers, inclusive
+     *
+     * @return a random number between the provided min and max numbers, as an Integer.
+     */
+    Integer getAttribute(Integer min, Integer max) {
+        Random rand = new Random();
+        if (min > max) { // if true, swap to avoid negative values
+            Integer temp = min;
+            min = max;
+            max = temp;
+        }
+        // returns a random number between min and max inclusive
+        return rand.nextInt(max - min) + min;
     }
 
     /**
