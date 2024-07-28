@@ -92,7 +92,11 @@ public abstract class Monster {
      */
     public Integer attackTarget(Monster target) {
 
-        return 0 ;
+        Integer damageInflicted = this.attack.attack(target);
+
+        target.takeDamage(damageInflicted);
+
+        return damageInflicted;
     }
 
     /**
