@@ -10,20 +10,33 @@ import Monsters.Monster;
  * @author Dakota L. Fouch
  * @since 07/18/2024
  * CST 338 Software Design with Dr. C
- * HW3: Strategy Pattern (RangedAttack.java)
+ * HW3: Strategy Pattern (Abilities.RangedAttack.java)
  */
 public class RangedAttack implements Attack {
 
-    Monster attacker;
+    Monster attacker; // a Monster object representing the attacker
 
+    /**
+     * Constructs the RangedAttack object by setting the attacker who makes the attack.
+     *
+     * @param attacker a Monster object representing this attacker.
+     *
+     */
     public RangedAttack(Monster attacker) {
         this.attacker = attacker;
     }
 
+    /**
+     * Initiates an attack from this Monster to the target Monster.
+     *
+     * @param target a Monster object representing the target.
+     *
+     * @return the amount of damage points the Monster inflicted upon the target.
+     */
     @Override
     public Integer attack(Monster target) {
         String message = attacker + " uses a ranged attack on " + target;
         System.out.println(message);
-        return null;
+        return attacker.getAgi() - target.getAgi(); // return the amount of damage the target took
     }
 }

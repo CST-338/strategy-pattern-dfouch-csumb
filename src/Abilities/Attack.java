@@ -10,7 +10,7 @@ import Monsters.Monster;
  * @author Dakota L. Fouch
  * @since 07/18/2024
  * CST 338 Software Design with Dr. C
- * HW3: Strategy Pattern (Attack.java)
+ * HW3: Strategy Pattern (Abilities.Attack.java)
  */
 public interface Attack extends Ability {
 
