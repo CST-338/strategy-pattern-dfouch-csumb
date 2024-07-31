@@ -1,6 +1,6 @@
 package Monsters;
 
-import Abilities.MeleeAttack;
+import Abilities.RangedAttack;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,7 +36,7 @@ public class Kobold extends Monster {
         monsterStatsMax.put("def", Arrays.asList(def, 6)); // store the base Monster and Kobold defense stats in the HashMap
         monsterStatsMax.put("agi", Arrays.asList(agi, 3)); // store the base Monster and Kobold agility stats in the HashMap
 
-        attack = new MeleeAttack(this); // initialize an MeleeAttack object
+        attack = new RangedAttack(this); // initialize an RangedAttack object
 
         // iterate through each Monster stat in the HashMap, to find the final stat value
         for (String stat : monsterStatsMax.keySet()) {
@@ -58,6 +58,6 @@ public class Kobold extends Monster {
      */
     @Override
     public String toString() {
-        return "Kobold has : " + super.toString(); // display message specifying the Monster is a Kobold & call the parent class's toString to display the health points
+        return "Monsters.Kobold has : " + super.toString(); // display message specifying the Monster is a Kobold & call the parent class's toString to display the health points
     }
 }

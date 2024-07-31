@@ -8,7 +8,7 @@ package Abilities;
  * @author Dakota L. Fouch
  * @since 07/18/2024
  * CST 338 Software Design with Dr. C
- * HW3: Strategy Pattern (Ability.java)
+ * HW3: Strategy Pattern (Abilities.Ability.java)
  */
 public interface Ability {
 }

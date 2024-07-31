@@ -16,7 +16,7 @@ import java.util.Random;
  * @author Dakota L. Fouch
  * @since 07/18/2024
  * CST 338 Software Design with Dr. C
- * HW3: Strategy Pattern (Monster.java)
+ * HW3: Strategy Pattern (Monsters.Monster.java)
  */
 public abstract class Monster {
 
